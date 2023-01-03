@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="home h-feed px-4 md:px-0">
+
+  <ul class="post-list">
+    {{ $paginator := .Paginate (where .Site.Pages.ByDate.Reverse "Type" "post") (index .Site.Params "archive-paginate" | default 25) }}
+    {{ range $paginator.Pages  }}
+      <li class="h-entry pb-12 mx-auto prose border-b border-grey-400 mb-12">
+        {{ if .Title }}
+            <h1 class="text-lg font-serif no-underline"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+        {{ end }}
+
+        <div class="e-content prose prose-a:text-blue-600 mx-auto pb-8">
+             {{ .Content }}
+        </div>
+
+        <a href="{{ .Permalink }}" class="u-url text-gray-400 text-sm no-underline">&rarr; <span class="post-meta"><time class="dt-published" datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">{{ .Date.Format "Jan 2, 2006" }}</time></span></a>
+
+      </li>
+    {{ end }}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "feed.xml" | absURL }}">via RSS</a></p>
+
+</div>
+{{ end }}
