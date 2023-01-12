@@ -21,5 +21,35 @@
 
   <p class="rss-subscribe">subscribe <a href="{{ "feed.xml" | absURL }}">via RSS</a></p>
 
+  <footer
+        className="flex flex-wrap max-w-5xl mx-auto pt-12 pb-12 gap-2 justify-center px-2 md:px-0"
+        itemScope
+        itemType="http://schema.org/Person"
+      >
+        <link itemProp="url" href="https://www.jamiemchale.com" />
+        <meta itemProp="honorificPrefix" content="Mr" />
+        <meta itemProp="gender" content="male" />
+        <a href="http://twitter.com/jamiemchale" rel="me" className="cursor-pointer underline decoration-blue-200 hover:decoration-blue-400 transition-colors decoration-4 underline-offset-2">
+          Twitter
+        </a>
+        {" "}
+        &middot;{" "}
+        <a href="http://youtube.com/jamiemchale" rel="me" className="cursor-pointer underline decoration-blue-200 hover:decoration-blue-400 transition-colors decoration-4 underline-offset-2">
+          YouTube
+          </a>
+        {" "}
+        &middot;{" "}
+        <a href="http://instagram.com/jamiemchale" rel="me" className="cursor-pointer underline decoration-blue-200 hover:decoration-blue-400 transition-colors decoration-4 underline-offset-2">
+          Instagram
+          </a>
+        {" "}
+        &middot;{" "}
+        <a rel="me" href="https://mastodon.social/@jamiemchale"className="cursor-pointer underline decoration-blue-200 hover:decoration-blue-400 transition-colors decoration-4 underline-offset-2">
+          Mastodon
+          </a>
+        {" "}
+        &middot; <a href="{{ "feed.xml" | absURL }}" className="cursor-pointer underline decoration-blue-200 hover:decoration-blue-400 transition-colors decoration-4 underline-offset-2">Micro Blog RSS</a>
+      </footer>
+
 </div>
 {{ end }}
